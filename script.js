@@ -516,6 +516,206 @@ const events = [
     era: "medieval",
     location: [49.9929, 8.2473],
     place: "Mainz, Germany"
+},
+{
+    year: "1492",
+    title: "Christopher Columbus Reaches the Americas",
+    description: "Christopher Columbus reached the Caribbean during a Spanish-sponsored voyage. His arrival began a period of sustained European colonization and profound changes for Indigenous societies.",
+    era: "modern",
+    location: [24.0, -74.0],
+    place: "The Bahamas"
+},
+{
+    year: "1517",
+    title: "The Protestant Reformation Begins",
+    description: "Martin Luther published his Ninety-Five Theses, challenging practices within the Catholic Church. The movement led to major religious and political transformations across Europe.",
+    era: "modern",
+    location: [51.8667, 12.65],
+    place: "Wittenberg, Germany"
+},
+{
+    year: "1588",
+    title: "Defeat of the Spanish Armada",
+    description: "England's naval forces and difficult weather conditions contributed to the defeat of the Spanish Armada. The event weakened Spain's plans to invade England.",
+    era: "modern",
+    location: [50.0, -5.0],
+    place: "English Channel"
+},
+{
+    year: "1642",
+    title: "English Civil War Begins",
+    description: "Conflict broke out between supporters of King Charles I and Parliament over political authority and governance. The war eventually led to the execution of the king.",
+    era: "modern",
+    location: [52.95, -1.15],
+    place: "Nottingham, England"
+},
+{
+    year: "1688",
+    title: "Glorious Revolution",
+    description: "James II was removed from the English throne and replaced by William III and Mary II. The revolution strengthened Parliament's authority and helped shape constitutional monarchy.",
+    era: "modern",
+    location: [51.5, -0.12],
+    place: "London, England"
+},
+{
+    year: "1776",
+    title: "American Declaration of Independence",
+    description: "Thirteen American colonies declared their independence from British rule. The declaration became an influential document in the history of democratic and republican ideas.",
+    era: "modern",
+    location: [39.9496, -75.1503],
+    place: "Philadelphia, United States"
+},
+{
+    year: "1789",
+    title: "French Revolution Begins",
+    description: "Political and social unrest led to the French Revolution, challenging the monarchy and the privileges of the aristocracy. It transformed France and influenced political movements worldwide.",
+    era: "modern",
+    location: [48.8566, 2.3522],
+    place: "Paris, France"
+},
+{
+    year: "1789",
+    title: "Storming of the Bastille",
+    description: "Revolutionaries stormed the Bastille fortress-prison in Paris. The event became a powerful symbol of resistance against royal authority.",
+    era: "modern",
+    location: [48.8534, 2.3690],
+    place: "Paris, France"
+},
+{
+    year: "1791",
+    title: "Haitian Revolution Begins",
+    description: "Enslaved people in the French colony of Saint-Domingue began a revolution against slavery and colonial rule. The struggle eventually established Haiti as an independent nation.",
+    era: "modern",
+    location: [18.5944, -72.3074],
+    place: "Saint-Domingue, present-day Haiti"
+},
+{
+    year: "1793",
+    title: "Execution of Louis XVI",
+    description: "King Louis XVI of France was executed during the French Revolution. The event marked a dramatic turning point in the abolition of the French monarchy.",
+    era: "modern",
+    location: [48.8610, 2.3210],
+    place: "Place de la Révolution, Paris"
+},
+{
+    year: "1804",
+    title: "Haiti Declares Independence",
+    description: "Haiti declared independence after defeating French colonial forces. It became the first independent Black republic and the first country established through a successful revolt by enslaved people.",
+    era: "modern",
+    location: [19.7592, -72.1982],
+    place: "Gonaïves, Haiti"
+},
+{
+    year: "1810",
+    title: "Mexican War of Independence Begins",
+    description: "Miguel Hidalgo's call for rebellion against Spanish colonial rule sparked Mexico's independence movement. The struggle continued for more than a decade.",
+    era: "modern",
+    location: [21.0180, -101.2580],
+    place: "Dolores Hidalgo, Mexico"
+},
+{
+    year: "1830",
+    title: "July Revolution in France",
+    description: "A revolution overthrew King Charles X and brought Louis-Philippe to power. It demonstrated the continuing influence of revolutionary movements in Europe.",
+    era: "modern",
+    location: [48.8566, 2.3522],
+    place: "Paris, France"
+},
+{
+    year: "1848",
+    title: "Revolutions of 1848",
+    description: "A wave of revolutions spread across Europe as people demanded political representation, civil liberties and social reforms. The uprisings challenged established monarchies and governments.",
+    era: "modern",
+    location: [48.2082, 16.3738],
+    place: "Vienna, Austrian Empire"
+},
+{
+    year: "1857",
+    title: "Indian Rebellion of 1857",
+    description: "A major uprising against the rule of the British East India Company began among Indian soldiers and spread to several regions. It led to the end of Company rule and direct British Crown administration.",
+    era: "modern",
+    location: [28.9845, 77.7064],
+    place: "Meerut, India"
+},
+{
+    year: "1861",
+    title: "American Civil War Begins",
+    description: "The American Civil War began after Confederate forces attacked Fort Sumter. The conflict centred on the preservation of the Union and the future of slavery in the United States.",
+    era: "modern",
+    location: [32.7520, -79.8740],
+    place: "Fort Sumter, South Carolina"
+},
+{
+    year: "1868",
+    title: "Meiji Restoration",
+    description: "Political power was restored to the Japanese emperor, beginning a period of rapid modernization and industrialization. Japan transformed its government, military and economy.",
+    era: "modern",
+    location: [35.6762, 139.6503],
+    place: "Tokyo, Japan"
+},
+{
+    year: "1871",
+    title: "Unification of Germany",
+    description: "German states were unified into the German Empire under Prussian leadership. King Wilhelm I was proclaimed German Emperor at the Palace of Versailles.",
+    era: "modern",
+    location: [48.8049, 2.1204],
+    place: "Palace of Versailles, France"
+},
+{
+    year: "1885",
+    title: "Indian National Congress Founded",
+    description: "The Indian National Congress was established, creating an important platform for political discussion and eventually becoming a leading organization in India's independence movement.",
+    era: "modern",
+    location: [18.9388, 72.8354],
+    place: "Bombay, British India"
+},
+{
+    year: "1914",
+    title: "World War I Begins",
+    description: "Following the assassination of Archduke Franz Ferdinand, a chain of alliances and declarations of war brought major powers into a global conflict. The war reshaped international politics.",
+    era: "modern",
+    location: [43.8563, 18.4131],
+    place: "Sarajevo, Bosnia"
+},
+{
+    year: "1917",
+    title: "Russian Revolution",
+    description: "Revolutionary movements overthrew the Russian monarchy and later brought the Bolsheviks to power. These events led to the establishment of a communist government.",
+    era: "modern",
+    location: [59.9343, 30.3351],
+    place: "Petrograd, Russia"
+},
+{
+    year: "1919",
+    title: "Treaty of Versailles",
+    description: "The treaty formally ended the state of war between Germany and the Allied Powers after World War I. Its terms reshaped European borders and imposed significant obligations on Germany.",
+    era: "modern",
+    location: [48.8049, 2.1204],
+    place: "Palace of Versailles, France"
+},
+{
+    year: "1939",
+    title: "World War II Begins",
+    description: "Germany invaded Poland, prompting Britain and France to declare war. The conflict expanded into a global war involving nations across multiple continents.",
+    era: "modern",
+    location: [52.2297, 21.0122],
+    place: "Warsaw, Poland"
+},
+{
+    year: "1945",
+    title: "United Nations Established",
+    description: "The United Nations was officially established after World War II to promote international cooperation, peace and security. Its founding charter was signed by 50 countries.",
+    era: "modern",
+    location: [37.7749, -122.4194],
+    place: "San Francisco, United States"
+},
+{
+    year: "1991",
+    title: "Dissolution of the Soviet Union",
+    description: "The Soviet Union formally dissolved, ending a major political entity of the twentieth century. Its breakup marked a defining moment in the end of the Cold War.",
+    era: "modern",
+    location: [55.7558, 37.6173],
+    place: "Moscow, Russia"
 }
     
 ];
