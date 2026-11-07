@@ -1,0 +1,355 @@
+:root {
+    --bg: #171612;
+    --surface: #211f19;
+    --gold: #b89b63;
+    --gold-light: #d5bd8e;
+    --text: #e8dfcc;
+    --muted: #999080;
+    --border: rgba(184, 155, 99, 0.25);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.navbar {
+    height: 85px;
+    padding: 0 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border);
+}
+
+.logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 5px;
+}
+
+.logo span {
+    color: var(--gold);
+}
+
+nav {
+    display: flex;
+    gap: 35px;
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 1px;
+}
+
+nav a:hover {
+    color: var(--gold-light);
+}
+
+.edition, .eyebrow {
+    color: var(--gold);
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.hero {
+    min-height: 590px;
+    padding: 120px 10%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(90deg, rgba(23,22,18,0.98), rgba(23,22,18,0.68)),
+        url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=1800')
+        center/cover;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(48px, 6vw, 78px);
+    line-height: 1.05;
+    margin: 28px 0;
+    font-weight: 500;
+}
+
+.hero h1 i, h2 i {
+    color: var(--gold-light);
+    font-weight: 400;
+}
+
+.hero-description {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.9;
+    max-width: 480px;
+    margin-bottom: 35px;
+}
+
+.explore-btn {
+    display: inline-block;
+    padding: 15px 25px;
+    border: 1px solid var(--gold);
+    color: var(--gold-light);
+    font-size: 11px;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+.explore-btn:hover {
+    background: var(--gold);
+    color: var(--bg);
+}
+
+.hero-note {
+    position: absolute;
+    bottom: 30px;
+    right: 8%;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 2px;
+}
+
+.section {
+    padding: 100px 10%;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 40px;
+}
+
+.section-heading h2, .discovery h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 500;
+    margin-top: 12px;
+}
+
+.section-note {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+#map {
+    height: 480px;
+    border: 1px solid var(--border);
+    z-index: 1;
+}
+
+.event-details {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 20px;
+    margin-top: 15px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.timeline-section {
+    background: #1d1b16;
+}
+
+.timeline-controls {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 35px;
+    flex-wrap: wrap;
+}
+
+.filter {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    padding: 10px 20px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 11px;
+}
+
+.filter.active, .filter:hover {
+    background: var(--gold);
+    color: var(--bg);
+}
+
+.timeline-events {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.event-card {
+    background: var(--surface);
+    padding: 28px;
+    border: 1px solid var(--border);
+    transition: 0.3s;
+}
+
+.event-card:hover, .civilization-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--gold);
+}
+
+.event-year {
+    color: var(--gold);
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.event-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 27px;
+    margin: 12px 0;
+}
+
+.event-card p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.event-era {
+    display: inline-block;
+    margin-top: 18px;
+    color: var(--gold);
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.civilization-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.civilization-card {
+    background: var(--surface);
+    padding: 35px 25px;
+    border: 1px solid var(--border);
+    transition: 0.3s;
+}
+
+.civilization-card .symbol {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.civilization-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+.civilization-card p {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.discovery {
+    padding: 90px 10%;
+    text-align: center;
+    background: #242117;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.discovery p:not(.eyebrow) {
+    max-width: 650px;
+    margin: 20px auto;
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+#new-fact {
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold-light);
+    padding: 12px 20px;
+    margin-top: 15px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    font-size: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 55px 10%;
+}
+
+footer p {
+    color: var(--muted);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    margin: 12px 0 25px;
+}
+
+footer small {
+    font-size: 9px;
+    color: var(--gold);
+    letter-spacing: 2px;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 20px 6%;
+        height: auto;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    nav {
+        gap: 15px;
+        font-size: 10px;
+    }
+
+    .edition {
+        display: none;
+    }
+
+    .hero {
+        padding: 90px 7%;
+    }
+
+    .section {
+        padding: 70px 7%;
+    }
+
+    .section-heading {
+        display: block;
+    }
+
+    .section-note {
+        margin-top: 15px;
+    }
+
+    .timeline-events, .civilization-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #map {
+        height: 350px;
+    }
+}

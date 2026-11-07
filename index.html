@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATLAS | Curiosity, Mapped.</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+</head>
+
+<body>
+
+<header class="navbar">
+    <a href="#" class="logo">ATLAS<span>.</span></a>
+    <nav>
+        <a href="#explore">Explore</a>
+        <a href="#timeline">Timeline</a>
+        <a href="#civilizations">Civilizations</a>
+    </nav>
+    <span class="edition">THE HISTORICAL ARCHIVE · EST. 2026</span>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <p class="eyebrow">A JOURNEY THROUGH HUMAN HISTORY</p>
+        <h1>Every place has a past.<br><i>Every past has a story.</i></h1>
+        <p class="hero-description">
+            Explore the civilizations, events and extraordinary
+            stories that shaped the world we inhabit.
+        </p>
+        <a href="#explore" class="explore-btn">BEGIN EXPLORING ↗</a>
+    </div>
+    <div class="hero-note">VOL. I &nbsp; · &nbsp; THE HUMAN STORY</div>
+</section>
+
+<section class="section" id="explore">
+    <div class="section-heading">
+        <div>
+            <p class="eyebrow">01 / GEOGRAPHY OF THE PAST</p>
+            <h2>History, <i>without borders.</i></h2>
+        </div>
+        <p class="section-note">Select a marker to discover its history.</p>
+    </div>
+
+    <div id="map"></div>
+    <div id="event-details" class="event-details">
+        Select a historical location on the map to explore.
+    </div>
+</section>
+
+<section class="section timeline-section" id="timeline">
+    <div class="section-heading">
+        <div>
+            <p class="eyebrow">02 / THE PASSAGE OF TIME</p>
+            <h2>A timeline of <i>humanity.</i></h2>
+        </div>
+    </div>
+
+    <div class="timeline-controls">
+        <button class="filter active" data-era="all">All eras</button>
+        <button class="filter" data-era="ancient">Ancient</button>
+        <button class="filter" data-era="medieval">Medieval</button>
+        <button class="filter" data-era="modern">Modern</button>
+    </div>
+
+    <div id="timeline-events" class="timeline-events"></div>
+</section>
+
+<section class="section" id="civilizations">
+    <div class="section-heading">
+        <div>
+            <p class="eyebrow">03 / CRADLES OF CIVILIZATION</p>
+            <h2>Worlds that <i>shaped us.</i></h2>
+        </div>
+    </div>
+
+    <div id="civilization-grid" class="civilization-grid"></div>
+</section>
+
+<section class="discovery">
+    <p class="eyebrow">A FRAGMENT FROM THE PAST</p>
+    <h2>Did you know?</h2>
+    <p id="daily-fact"></p>
+    <button id="new-fact">DISCOVER ANOTHER ↗</button>
+</section>
+
+<footer>
+    <div class="logo">ATLAS<span>.</span></div>
+    <p>History is not behind us. It is within everything.</p>
+    <small>AN INDEPENDENT HISTORICAL EXPLORATION PROJECT · 2026</small>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
