@@ -353,3 +353,427 @@ footer small {
         height: 350px;
     }
 }
+
+.search-container {
+    width: 100%;
+    max-width: 650px;
+    margin: 25px auto;
+}
+
+#event-search {
+    width: 100%;
+    padding: 15px 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text);
+    font-size: 15px;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+#event-search:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 12px rgba(184, 155, 99, 0.15);
+}
+
+#event-search::placeholder {
+    color: var(--muted);
+}
+/* ==========================================
+   ATLAS INTERACTIVE TIMELINE
+========================================== */
+
+.atlas-timeline {
+    width: 100%;
+    margin-top: 30px;
+}
+
+/* TOOLBAR */
+
+.timeline-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 35px;
+}
+
+.timeline-navigation,
+.timeline-jump {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.timeline-nav-btn,
+.timeline-jump select {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--gold-light);
+    padding: 12px 18px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 11px;
+}
+
+.timeline-nav-btn:hover,
+.timeline-jump select:hover {
+    background: var(--gold);
+    color: var(--bg);
+}
+
+/* TIMELINE INFORMATION */
+
+.timeline-range-info {
+    display: flex;
+    justify-content: space-between;
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+}
+
+/* TIMELINE TRACK */
+
+.timeline-track-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+}
+
+.timeline-track-viewport {
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    flex: 1;
+    scrollbar-width: thin;
+    scrollbar-color: var(--gold) var(--surface);
+}
+
+.timeline-track {
+    display: flex;
+    align-items: flex-start;
+    min-width: max-content;
+    padding: 45px 20px 35px;
+    position: relative;
+}
+
+.timeline-track::before {
+    content: "";
+    position: absolute;
+    top: 52px;
+    left: 20px;
+    right: 20px;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.5;
+}
+
+.timeline-item {
+    width: 190px;
+    flex-shrink: 0;
+    position: relative;
+    text-align: center;
+}
+
+.timeline-marker {
+    background: transparent;
+    border: none;
+    color: var(--text);
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.timeline-marker-dot {
+    width: 13px;
+    height: 13px;
+    background: var(--bg);
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    margin-bottom: 18px;
+    transition: 0.3s;
+    z-index: 2;
+}
+
+.timeline-marker-year {
+    font-size: 12px;
+    color: var(--gold);
+    margin-bottom: 10px;
+}
+
+.timeline-marker-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    max-width: 160px;
+    line-height: 1.3;
+    color: var(--muted);
+}
+
+.timeline-item.selected .timeline-marker-dot {
+    background: var(--gold);
+    transform: scale(1.5);
+    box-shadow: 0 0 15px rgba(184,155,99,0.6);
+}
+
+.timeline-item.selected .timeline-marker-title {
+    color: var(--gold-light);
+}
+
+.timeline-marker:hover .timeline-marker-dot {
+    transform: scale(1.4);
+}
+
+/* TRACK ARROWS */
+
+.track-arrow {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--gold);
+    width: 35px;
+    height: 45px;
+    cursor: pointer;
+    font-size: 25px;
+    flex-shrink: 0;
+}
+
+.track-arrow:hover {
+    background: var(--gold);
+    color: var(--bg);
+}
+
+/* PROGRESS */
+
+.timeline-progress-container {
+    height: 2px;
+    background: var(--border);
+    margin: 20px 0 40px;
+}
+
+.timeline-progress {
+    height: 100%;
+    width: 0%;
+    background: var(--gold);
+    transition: width 0.3s ease;
+}
+
+/* EVENT DETAILS */
+
+.timeline-detail {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 40px;
+    min-height: 250px;
+    animation: timelineFade 0.35s ease;
+}
+
+@keyframes timelineFade {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.detail-category {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--gold);
+}
+
+.timeline-detail h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    margin: 22px 0 15px;
+    color: var(--gold-light);
+}
+
+.detail-description {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.9;
+    max-width: 850px;
+}
+
+.detail-location {
+    color: var(--gold);
+    font-size: 12px;
+    margin-top: 22px;
+}
+
+.detail-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.detail-footer button {
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold-light);
+    padding: 12px 18px;
+    cursor: pointer;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.detail-footer button:hover {
+    background: var(--gold);
+    color: var(--bg);
+}
+
+/* EMPTY SEARCH */
+
+.timeline-empty {
+    color: var(--muted);
+    padding: 30px;
+    font-size: 14px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+
+    .timeline-toolbar {
+        align-items: stretch;
+    }
+
+    .timeline-navigation,
+    .timeline-jump {
+        width: 100%;
+    }
+
+    .timeline-jump select {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .timeline-detail {
+        padding: 25px;
+    }
+
+    .timeline-detail h3 {
+        font-size: 28px;
+    }
+
+    .timeline-item {
+        width: 155px;
+    }
+
+    .timeline-marker-title {
+        font-size: 15px;
+    }
+
+    .track-arrow {
+        width: 28px;
+    }
+
+}
+/* ==========================================
+   ATLAS HORIZONTAL TIMELINE SCROLL
+========================================== */
+
+/* Prevent the timeline from expanding the page */
+#timeline-events {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.atlas-timeline {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow: hidden;
+}
+
+/* Only the actual timeline track scrolls */
+.timeline-track-viewport {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    overscroll-behavior-x: contain;
+    scrollbar-width: thin;
+    scrollbar-color: var(--gold) var(--surface);
+    padding: 25px 5px 35px;
+}
+
+/* Keep timeline events in one horizontal row */
+.timeline-track {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    width: max-content;
+    min-width: 100%;
+    padding: 15px 10px;
+}
+
+/* Prevent individual events from shrinking */
+.timeline-marker {
+    flex: 0 0 220px;
+    width: 220px;
+}
+
+/* Scrollbar styling */
+.timeline-track-viewport::-webkit-scrollbar {
+    height: 8px;
+}
+
+.timeline-track-viewport::-webkit-scrollbar-track {
+    background: var(--surface);
+    border-radius: 10px;
+}
+
+.timeline-track-viewport::-webkit-scrollbar-thumb {
+    background: var(--gold);
+    border-radius: 10px;
+}
+
+.timeline-track-viewport::-webkit-scrollbar-thumb:hover {
+    background: var(--gold-light);
+}
+
+/* Prevent horizontal overflow on the whole page */
+body {
+    overflow-x: hidden;
+}
+
+@media (max-width: 600px) {
+    .timeline-marker {
+        flex-basis: 180px;
+        width: 180px;
+    }
+
+    .timeline-track {
+        gap: 20px;
+    }
+}

@@ -936,8 +936,135 @@ const events = [
         era: "modern",
         location: [28.6143, 77.1994],
         place: "New Delhi, India"
-    }
-
+    },
+    {
+        year: "1896",
+        title: "Philippine Revolution",
+        description: "The Philippine Revolution began against Spanish colonial rule, led initially by the Katipunan revolutionary movement. It eventually paved the way for the Philippines' declaration of independence in 1898.",
+        era: "modern",
+        location: [14.2456, 120.8786],
+        place: "Cavite, Philippines"
+    },
+    {
+        year: "1910",
+        title: "Mexican Revolution",
+        description: "A major revolution against the dictatorship of Porfirio Díaz. The movement led to years of civil conflict and major political and social reforms, including land redistribution.",
+        era: "modern",
+        location: [19.4326, -99.1332],
+        place: "Mexico City, Mexico"
+    },
+    {
+        year: "1911",
+        title: "Xinhai Revolution",
+        description: "The Xinhai Revolution overthrew China's Qing dynasty, ending more than two thousand years of imperial rule and leading to the establishment of the Republic of China.",
+        era: "modern",
+        location: [30.5536, 114.3167],
+        place: "Wuchang, Wuhan, China"
+    },
+{
+    year: "1917",
+    title: "October Revolution",
+    description: "Bolshevik forces led by Vladimir Lenin overthrew the Provisional Government in Petrograd. The revolution paved the way for the creation of the Soviet state.",
+    era: "modern",
+    location: [59.9343, 30.3351],
+    place: "Petrograd, Russia"
+},
+{
+    year: "1949",
+    title: "Founding of the People's Republic of China",
+    description: "After the Chinese Civil War, Mao Zedong proclaimed the People's Republic of China in Beijing on October 1, establishing Communist Party rule over mainland China.",
+    era: "modern",
+    location: [39.9042, 116.4074],
+    place: "Beijing, China"
+},
+{
+    year: "1959",
+    title: "Cuban Revolution",
+    description: "Fidel Castro's revolutionary movement overthrew the dictatorship of Fulgencio Batista. The victory transformed Cuba's political system and its relationship with the United States.",
+    era: "modern",
+    location: [23.1136, -82.3666],
+    place: "Havana, Cuba"
+},
+{
+    year: "1961",
+    title: "Construction of the Berlin Wall",
+    description: "East Germany began constructing the Berlin Wall to prevent movement from East Berlin into West Berlin. It became one of the most powerful symbols of the Cold War.",
+    era: "modern",
+    location: [52.5200, 13.4050],
+    place: "Berlin, Germany"
+},
+{
+    year: "1971",
+    title: "Bangladesh Liberation War",
+    description: "East Pakistan fought for independence from West Pakistan following political repression and military violence. India intervened in December, and Bangladesh emerged as an independent nation.",
+    era: "modern",
+    location: [23.8103, 90.4125],
+    place: "Dhaka, Bangladesh"
+},
+{
+    year: "1975",
+    title: "Fall of Saigon",
+    description: "North Vietnamese forces captured Saigon, bringing the Vietnam War to an end and leading to the reunification of Vietnam under Communist rule.",
+    era: "modern",
+    location: [10.8231, 106.6297],
+    place: "Saigon, South Vietnam"
+},
+{
+    year: "1975",
+    title: "Declaration of Emergency in India",
+    description: "Prime Minister Indira Gandhi declared a national Emergency on June 25. Civil liberties were restricted, opposition leaders were arrested, and press censorship was imposed. The Emergency ended in 1977.",
+    era: "modern",
+    location: [28.6139, 77.2090],
+    place: "New Delhi, India"
+},
+{
+    year: "1979",
+    title: "Iranian Revolution",
+    description: "A mass revolutionary movement overthrew Shah Mohammad Reza Pahlavi. Ayatollah Ruhollah Khomeini returned to Iran, and the country became an Islamic Republic.",
+    era: "modern",
+    location: [35.6892, 51.3890],
+    place: "Tehran, Iran"
+},
+{
+    year: "1986",
+    title: "People Power Revolution",
+    description: "Millions of Filipinos participated in peaceful demonstrations against Ferdinand Marcos. The movement led to his departure and the restoration of democratic government under Corazon Aquino.",
+    era: "modern",
+    location: [14.5995, 120.9842],
+    place: "Manila, Philippines"
+},
+{
+    year: "1989",
+    title: "Fall of the Berlin Wall",
+    description: "Following growing public protests and political changes across Eastern Europe, East Germany opened its border crossings. The fall of the Berlin Wall became a defining moment in the decline of the Cold War.",
+    era: "modern",
+    location: [52.5200, 13.4050],
+    place: "Berlin, Germany"
+},
+{
+    year: "1989",
+    title: "Velvet Revolution",
+    description: "A largely peaceful movement of demonstrations and strikes ended Communist Party rule in Czechoslovakia. Václav Havel later became president.",
+    era: "modern",
+    location: [50.0755, 14.4378],
+    place: "Prague, Czechoslovakia"
+},
+{
+    year: "1990",
+    title: "German Reunification",
+    description: "East and West Germany officially reunited on October 3, ending decades of division that began after World War II.",
+    era: "modern",
+    location: [52.5200, 13.4050],
+    place: "Berlin, Germany"
+},
+{
+    year: "1994",
+    title: "End of Apartheid in South Africa",
+    description: "South Africa held its first democratic elections open to citizens of all races. Nelson Mandela became the country's first Black president, marking the end of apartheid rule.",
+    era: "modern",
+    location: [25.7479, 28.2293],
+    place: "Pretoria, South Africa"
+}
     
 ];
 
@@ -985,39 +1112,617 @@ const civilizations = [
 ];
 
 
-// 3. TIMELINE RENDERING
+// ==========================================
+// 3. ATLAS INTERACTIVE TIMELINE ENGINE
+// ==========================================
 
 const timelineContainer = document.getElementById("timeline-events");
+const searchInput = document.getElementById("event-search");
 
-function displayEvents(era = "all") {
+// Convert historical dates into sortable numerical values.
+// Negative = BCE, Positive = CE.
 
-    timelineContainer.innerHTML = "";
+function getHistoricalYear(year) {
 
-    const filteredEvents = events.filter(event =>
-        era === "all" || event.era === era
-    );
+    const value = String(year).trim().toUpperCase();
 
-    filteredEvents.forEach(event => {
+    const number = parseInt(value.replace(/[^0-9]/g, ""), 10);
 
-        const card = document.createElement("div");
-        card.className = "event-card";
+    if (isNaN(number)) return 0;
 
-        card.innerHTML = `
-            <span class="event-year">${event.year}</span>
-            <h3>${event.title}</h3>
-            <p>${event.description}</p>
-            <span class="event-era">${event.era} · ${event.place}</span>
-        `;
+    if (value.includes("BCE") || value.includes("BC")) {
+        return -number;
+    }
 
-        timelineContainer.appendChild(card);
-
-    });
+    return number;
 }
 
-displayEvents();
+
+// Sort events chronologically.
+
+const chronologicalEvents = [...events].sort((a, b) =>
+    getHistoricalYear(a.year) - getHistoricalYear(b.year)
+);
 
 
-// 4. TIMELINE FILTER BUTTONS
+// Timeline state.
+
+let activeEra = "all";
+let selectedEventIndex = 0;
+let visibleEvents = [...chronologicalEvents];
+
+
+// ==========================================
+// 4. BUILD INTERACTIVE TIMELINE INTERFACE
+// ==========================================
+
+function initializeTimeline() {
+
+    timelineContainer.innerHTML = `
+
+        <div class="atlas-timeline">
+
+            <div class="timeline-toolbar">
+
+                <div class="timeline-navigation">
+
+                    <button id="timeline-prev" class="timeline-nav-btn">
+                        ← Previous
+                    </button>
+
+                    <button id="timeline-next" class="timeline-nav-btn">
+                        Next →
+                    </button>
+
+                </div>
+
+                <div class="timeline-jump">
+
+                    <select id="century-jump">
+                        <option value="">Jump to century</option>
+                    </select>
+
+                    <select id="decade-jump">
+                        <option value="">Jump to decade</option>
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-range-info">
+
+                <span id="timeline-position">EVENT 1</span>
+
+                <span id="timeline-date"></span>
+
+            </div>
+
+
+            <div class="timeline-track-wrapper">
+
+                <button class="track-arrow" id="track-left">
+                    ‹
+                </button>
+
+                <div class="timeline-track-viewport" id="track-viewport">
+
+                    <div class="timeline-track" id="timeline-track">
+
+                    </div>
+
+                </div>
+
+                <button class="track-arrow" id="track-right">
+                    ›
+                </button>
+
+            </div>
+
+
+            <div class="timeline-progress-container">
+
+                <div class="timeline-progress" id="timeline-progress"></div>
+
+            </div>
+
+
+            <div class="timeline-detail" id="timeline-detail">
+
+            </div>
+
+        </div>
+
+    `;
+
+
+    populateCenturyOptions();
+
+    renderInteractiveTimeline();
+
+    setupTimelineControls();
+
+}
+
+
+// ==========================================
+// 5. CENTURY AND DECADE NAVIGATION
+// ==========================================
+
+function getCentury(year) {
+
+    if (year < 0) {
+        return Math.ceil(Math.abs(year) / 100);
+    }
+
+    return Math.ceil(year / 100);
+}
+
+
+function populateCenturyOptions() {
+
+    const centurySelect = document.getElementById("century-jump");
+    const decadeSelect = document.getElementById("decade-jump");
+
+    const centuries = new Set();
+    const decades = new Set();
+
+    chronologicalEvents.forEach(event => {
+
+        const year = getHistoricalYear(event.year);
+
+        centuries.add(
+            year < 0
+                ? `${getCentury(year)}th Century BCE`
+                : `${getCentury(year)}th Century CE`
+        );
+
+        if (year < 0) {
+
+            const decade = Math.floor(Math.abs(year) / 10) * 10;
+
+            decades.add(`${decade}s BCE`);
+
+        } else {
+
+            const decade = Math.floor(year / 10) * 10;
+
+            decades.add(`${decade}s CE`);
+
+        }
+
+    });
+
+
+    [...centuries].forEach(century => {
+
+        const option = document.createElement("option");
+
+        option.value = century;
+        option.textContent = century;
+
+        centurySelect.appendChild(option);
+
+    });
+
+
+    [...decades].forEach(decade => {
+
+        const option = document.createElement("option");
+
+        option.value = decade;
+        option.textContent = decade;
+
+        decadeSelect.appendChild(option);
+
+    });
+
+}
+
+
+// ==========================================
+// 6. RENDER TIMELINE EVENTS
+// ==========================================
+
+function renderInteractiveTimeline() {
+
+    const track = document.getElementById("timeline-track");
+
+    if (!track) return;
+
+    track.innerHTML = "";
+
+    visibleEvents = chronologicalEvents.filter(event => {
+
+        const matchesEra =
+            activeEra === "all" || event.era === activeEra;
+
+        const searchTerm = searchInput
+            ? searchInput.value.toLowerCase().trim()
+            : "";
+
+        const searchableText = `
+            ${event.title}
+            ${event.year}
+            ${event.description}
+            ${event.place}
+            ${event.era}
+        `.toLowerCase();
+
+        const matchesSearch = searchableText.includes(searchTerm);
+
+        return matchesEra && matchesSearch;
+
+    });
+
+
+    if (visibleEvents.length === 0) {
+
+        track.innerHTML = `
+            <p class="timeline-empty">
+                No historical events found.
+                Try another search.
+            </p>
+        `;
+
+        document.getElementById("timeline-detail").innerHTML = "";
+
+        document.getElementById("timeline-position").textContent =
+            "NO EVENTS";
+
+        document.getElementById("timeline-date").textContent = "";
+
+        document.getElementById("timeline-progress").style.width = "0%";
+
+        return;
+
+    }
+
+
+    selectedEventIndex = Math.min(
+        selectedEventIndex,
+        visibleEvents.length - 1
+    );
+
+
+    visibleEvents.forEach((event, index) => {
+
+        const item = document.createElement("div");
+
+        item.className = "timeline-item";
+
+        if (index === selectedEventIndex) {
+            item.classList.add("selected");
+        }
+
+        const marker = document.createElement("button");
+
+        marker.className = "timeline-marker";
+
+        marker.setAttribute("aria-label", event.title);
+
+        marker.innerHTML = `
+            <span class="timeline-marker-dot"></span>
+            <span class="timeline-marker-year">${event.year}</span>
+            <span class="timeline-marker-title">${event.title}</span>
+        `;
+
+
+        marker.addEventListener("click", () => {
+
+            selectedEventIndex = index;
+
+            updateTimelineSelection();
+
+        });
+
+
+        item.appendChild(marker);
+
+        track.appendChild(item);
+
+    });
+
+
+    updateTimelineSelection();
+
+}
+
+
+// ==========================================
+// 7. EVENT DETAIL EXPLORER
+// ==========================================
+
+function updateTimelineSelection() {
+
+    if (!visibleEvents.length) return;
+
+    const event = visibleEvents[selectedEventIndex];
+
+    const track = document.getElementById("timeline-track");
+
+    const items = track.querySelectorAll(".timeline-item");
+
+    items.forEach((item, index) => {
+
+        item.classList.toggle(
+            "selected",
+            index === selectedEventIndex
+        );
+
+    });
+
+
+    const detail = document.getElementById("timeline-detail");
+
+    detail.innerHTML = `
+
+        <div class="detail-header">
+
+            <span class="event-year">
+                ${event.year}
+            </span>
+
+            <span class="detail-category">
+                ${event.era.toUpperCase()} HISTORY
+            </span>
+
+        </div>
+
+
+        <h3>${event.title}</h3>
+
+        <p class="detail-description">
+            ${event.description}
+        </p>
+
+
+        <div class="detail-location">
+
+            <span>⌖</span>
+
+            ${event.place}
+
+        </div>
+
+
+        <div class="detail-footer">
+
+            <span>
+                EVENT ${selectedEventIndex + 1}
+                OF ${visibleEvents.length}
+            </span>
+
+            <button id="view-on-map">
+                EXPLORE ON MAP ↗
+            </button>
+
+        </div>
+
+    `;
+
+
+    document.getElementById("timeline-position").textContent =
+        `EVENT ${selectedEventIndex + 1} / ${visibleEvents.length}`;
+
+    document.getElementById("timeline-date").textContent =
+        event.year;
+
+
+    const progress =
+        ((selectedEventIndex + 1) / visibleEvents.length) * 100;
+
+    document.getElementById("timeline-progress").style.width =
+        `${progress}%`;
+
+
+    // Keep selected event visible.
+
+    const selectedItem = items[selectedEventIndex];
+
+    if (selectedItem) {
+
+        selectedItem.scrollIntoView({
+            behavior: "smooth",
+            block: "nearest",
+            inline: "center"
+        });
+
+    }
+
+
+    // Connect timeline with the world map.
+
+    document.getElementById("view-on-map").addEventListener("click", () => {
+
+        map.setView(event.location, 6, {
+            animate: true
+        });
+
+        const matchingMarker = eventMarkers.find(marker =>
+            marker.event === event
+        );
+
+        if (matchingMarker) {
+            matchingMarker.marker.openPopup();
+        }
+
+        document.getElementById("map").scrollIntoView({
+            behavior: "smooth"
+        });
+
+    });
+
+}
+
+
+// ==========================================
+// 8. TIMELINE NAVIGATION CONTROLS
+// ==========================================
+
+function setupTimelineControls() {
+
+    document.getElementById("timeline-prev").addEventListener("click", () => {
+
+        if (selectedEventIndex > 0) {
+
+            selectedEventIndex--;
+
+            updateTimelineSelection();
+
+        }
+
+    });
+
+
+    document.getElementById("timeline-next").addEventListener("click", () => {
+
+        if (selectedEventIndex < visibleEvents.length - 1) {
+
+            selectedEventIndex++;
+
+            updateTimelineSelection();
+
+        }
+
+    });
+
+
+    document.getElementById("track-left").addEventListener("click", () => {
+
+        document.getElementById("track-viewport").scrollBy({
+            left: -350,
+            behavior: "smooth"
+        });
+
+    });
+
+
+    document.getElementById("track-right").addEventListener("click", () => {
+
+        document.getElementById("track-viewport").scrollBy({
+            left: 350,
+            behavior: "smooth"
+        });
+
+    });
+
+
+    document.getElementById("century-jump").addEventListener("change", event => {
+
+        const selectedCentury = event.target.value;
+
+        if (!selectedCentury) return;
+
+        const targetIndex = visibleEvents.findIndex(item => {
+
+            const year = getHistoricalYear(item.year);
+
+            const century = getCentury(year);
+
+            const label = year < 0
+                ? `${century}th Century BCE`
+                : `${century}th Century CE`;
+
+            return label === selectedCentury;
+
+        });
+
+
+        if (targetIndex !== -1) {
+
+            selectedEventIndex = targetIndex;
+
+            updateTimelineSelection();
+
+        }
+
+        event.target.value = "";
+
+    });
+
+
+    document.getElementById("decade-jump").addEventListener("change", event => {
+
+        const selectedDecade = event.target.value;
+
+        if (!selectedDecade) return;
+
+        const targetIndex = visibleEvents.findIndex(item => {
+
+            const year = getHistoricalYear(item.year);
+
+            if (selectedDecade.includes("BCE")) {
+
+                const decade = Math.floor(Math.abs(year) / 10) * 10;
+
+                return year < 0 && `${decade}s BCE` === selectedDecade;
+
+            }
+
+            const decade = Math.floor(year / 10) * 10;
+
+            return year >= 0 && `${decade}s CE` === selectedDecade;
+
+        });
+
+
+        if (targetIndex !== -1) {
+
+            selectedEventIndex = targetIndex;
+
+            updateTimelineSelection();
+
+        }
+
+        event.target.value = "";
+
+    });
+
+
+    // Keyboard navigation.
+
+    document.addEventListener("keydown", event => {
+
+        if (
+            event.target.tagName === "INPUT" ||
+            event.target.tagName === "TEXTAREA" ||
+            event.target.tagName === "SELECT"
+        ) return;
+
+        if (event.key === "ArrowLeft") {
+
+            if (selectedEventIndex > 0) {
+
+                selectedEventIndex--;
+
+                updateTimelineSelection();
+
+            }
+
+        }
+
+        if (event.key === "ArrowRight") {
+
+            if (selectedEventIndex < visibleEvents.length - 1) {
+
+                selectedEventIndex++;
+
+                updateTimelineSelection();
+
+            }
+
+        }
+
+    });
+
+}
+
+
+// ==========================================
+// 9. ERA FILTER INTEGRATION
+// ==========================================
 
 document.querySelectorAll(".filter").forEach(button => {
 
@@ -1029,11 +1734,41 @@ document.querySelectorAll(".filter").forEach(button => {
 
         button.classList.add("active");
 
-        displayEvents(button.dataset.era);
+        activeEra = button.dataset.era;
+
+        selectedEventIndex = 0;
+
+        renderInteractiveTimeline();
 
     });
 
 });
+
+
+// ==========================================
+// 10. SEARCH INTEGRATION
+// ==========================================
+
+if (searchInput) {
+
+    searchInput.addEventListener("input", () => {
+
+        selectedEventIndex = 0;
+
+        renderInteractiveTimeline();
+
+    });
+
+}
+
+
+// ==========================================
+// 11. INITIALIZE ATLAS TIMELINE
+// ==========================================
+
+initializeTimeline();
+
+console.log("ATLAS Interactive Timeline initialized.");
 
 
 // 5. CIVILIZATION EXPLORER
@@ -1067,6 +1802,13 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 19
 }).addTo(map);
 
+
+// ==========================================
+// INTERACTIVE WORLD MAP MARKERS
+// ==========================================
+
+const eventMarkers = [];
+
 events.forEach(event => {
 
     const marker = L.marker(event.location).addTo(map);
@@ -1077,11 +1819,20 @@ events.forEach(event => {
         ${event.place}
     `);
 
+    eventMarkers.push({
+        event: event,
+        marker: marker
+    });
+
     marker.on("click", () => {
 
         document.getElementById("event-details").innerHTML = `
-            <span class="event-year">${event.year} · ${event.place}</span>
+            <span class="event-year">
+                ${event.year} · ${event.place}
+            </span>
+
             <h3>${event.title}</h3>
+
             <p>${event.description}</p>
         `;
 
@@ -1123,3 +1874,6 @@ showRandomFact();
 console.log("ATLAS initialized successfully.");
 console.log("Historical events:", events.length);
 console.log("Civilizations:", civilizations.length);
+
+
+
