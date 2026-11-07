@@ -316,6 +316,206 @@ const events = [
     era: "ancient",
     location: [41.9028, 12.4964],
     place: "Rome, Italy"
+},
+{
+    year: "476 CE",
+    title: "Fall of the Western Roman Empire",
+    description: "The last Western Roman Emperor, Romulus Augustulus, was deposed by the Germanic leader Odoacer. This event traditionally marks the end of the Western Roman Empire.",
+    era: "medieval",
+    location: [41.9028, 12.4964],
+    place: "Rome, Italy"
+},
+{
+    year: "527 CE",
+    title: "Reign of Justinian I Begins",
+    description: "Justinian I became Byzantine Emperor and initiated major legal reforms, architectural projects and military campaigns to restore former Roman territories.",
+    era: "medieval",
+    location: [41.0082, 28.9784],
+    place: "Constantinople, Byzantine Empire"
+},
+{
+    year: "c. 570 CE",
+    title: "Birth of Prophet Muhammad",
+    description: "Muhammad was born in Mecca and later became the central religious figure of Islam, founding a movement that transformed the history of Arabia and beyond.",
+    era: "medieval",
+    location: [21.4225, 39.8262],
+    place: "Mecca, Arabia"
+},
+{
+    year: "622 CE",
+    title: "The Hijra",
+    description: "Prophet Muhammad and his followers migrated from Mecca to Medina. This migration marks the beginning of the Islamic calendar.",
+    era: "medieval",
+    location: [24.4672, 39.6111],
+    place: "Medina, Arabia"
+},
+{
+    year: "632 CE",
+    title: "Death of Prophet Muhammad",
+    description: "The death of Muhammad led to the establishment of the Rashidun Caliphate and a new phase in the political and religious history of the Islamic world.",
+    era: "medieval",
+    location: [24.4672, 39.6111],
+    place: "Medina, Arabia"
+},
+{
+    year: "661 CE",
+    title: "Beginning of the Umayyad Caliphate",
+    description: "The Umayyad dynasty established its rule over the Islamic Caliphate, eventually expanding its territories across parts of Asia, Africa and Europe.",
+    era: "medieval",
+    location: [33.5138, 36.2765],
+    place: "Damascus, Syria"
+},
+{
+    year: "711 CE",
+    title: "Umayyad Conquest of Iberia",
+    description: "Muslim forces under Tariq ibn Ziyad crossed into the Iberian Peninsula, beginning a major transformation in the region's political and cultural history.",
+    era: "medieval",
+    location: [36.1408, -5.3536],
+    place: "Gibraltar"
+},
+{
+    year: "732 CE",
+    title: "Battle of Tours",
+    description: "Frankish forces led by Charles Martel defeated an Umayyad army near Tours, becoming an important event in the history of medieval Western Europe.",
+    era: "medieval",
+    location: [46.5860, 0.3400],
+    place: "Near Poitiers, France"
+},
+{
+    year: "750 CE",
+    title: "Abbasid Revolution",
+    description: "The Abbasids overthrew the Umayyad Caliphate in most of the Islamic world, establishing a new dynasty that would oversee a major period of intellectual and cultural development.",
+    era: "medieval",
+    location: [32.5420, 44.4200],
+    place: "Mesopotamia"
+},
+{
+    year: "793 CE",
+    title: "Viking Raid on Lindisfarne",
+    description: "A Viking raid on the monastery of Lindisfarne in England became one of the most famous early events associated with the Viking Age.",
+    era: "medieval",
+    location: [55.6700, -1.8000],
+    place: "Lindisfarne, England"
+},
+{
+    year: "800 CE",
+    title: "Coronation of Charlemagne",
+    description: "Pope Leo III crowned Charlemagne as Emperor in Rome, strengthening the relationship between political authority and the Catholic Church in medieval Europe.",
+    era: "medieval",
+    location: [41.9028, 12.4964],
+    place: "Rome, Italy"
+},
+{
+    year: "862 CE",
+    title: "Traditional Founding of Novgorod",
+    description: "According to the Primary Chronicle, Rurik established his rule at Novgorod, an important episode in traditional accounts of the formation of early Rus.",
+    era: "medieval",
+    location: [58.5256, 31.2755],
+    place: "Novgorod, Russia"
+},
+{
+    year: "960 CE",
+    title: "Beginning of the Song Dynasty",
+    description: "The Song Dynasty was established in China, ushering in significant developments in printing, technology, commerce, science and urban life.",
+    era: "medieval",
+    location: [34.7970, 114.3070],
+    place: "Kaifeng, China"
+},
+{
+    year: "c. 1000 CE",
+    title: "Norse Settlement at L'Anse aux Meadows",
+    description: "Norse explorers established a settlement in Newfoundland, Canada, providing archaeological evidence of European presence in North America centuries before Columbus.",
+    era: "medieval",
+    location: [51.5960, -55.5330],
+    place: "Newfoundland, Canada"
+},
+{
+    year: "1054 CE",
+    title: "Great Schism",
+    description: "A major division between the Western Catholic and Eastern Orthodox Churches developed, marking a turning point in the history of Christianity.",
+    era: "medieval",
+    location: [41.0082, 28.9784],
+    place: "Constantinople"
+},
+{
+    year: "1066 CE",
+    title: "Battle of Hastings",
+    description: "William the Conqueror defeated King Harold II, leading to the Norman conquest of England and major changes in English society and governance.",
+    era: "medieval",
+    location: [50.9110, 0.4870],
+    place: "Hastings, England"
+},
+{
+    year: "1096 CE",
+    title: "Beginning of the First Crusade",
+    description: "Western European armies began their expedition towards the eastern Mediterranean following calls for military intervention in the Holy Land.",
+    era: "medieval",
+    location: [36.2021, 37.1343],
+    place: "Antioch Region"
+},
+{
+    year: "1187 CE",
+    title: "Battle of Hattin",
+    description: "Saladin defeated the Crusader forces at the Battle of Hattin, paving the way for the Muslim reconquest of Jerusalem.",
+    era: "medieval",
+    location: [32.8000, 35.4450],
+    place: "Horns of Hattin, Galilee"
+},
+{
+    year: "1206 CE",
+    title: "Rise of Genghis Khan",
+    description: "Temujin was proclaimed Genghis Khan, uniting Mongol tribes and establishing the foundations of the Mongol Empire.",
+    era: "medieval",
+    location: [47.9210, 106.9180],
+    place: "Mongolia"
+},
+{
+    year: "1215 CE",
+    title: "Signing of the Magna Carta",
+    description: "King John of England agreed to the Magna Carta, a charter that placed certain limits on royal authority and influenced later constitutional traditions.",
+    era: "medieval",
+    location: [51.4550, -0.5670],
+    place: "Runnymede, England"
+},
+{
+    year: "1271 CE",
+    title: "Marco Polo Begins His Journey to Asia",
+    description: "Marco Polo travelled east with his family, beginning the journey that would later become famous through accounts of his experiences in Asia.",
+    era: "medieval",
+    location: [41.9028, 12.4964],
+    place: "Venice, Italy"
+},
+{
+    year: "1299 CE",
+    title: "Foundation of the Ottoman Dynasty",
+    description: "Osman I established the principality that developed into the Ottoman Empire, a major political power spanning parts of Europe, Asia and Africa.",
+    era: "medieval",
+    location: [40.1553, 29.9822],
+    place: "Sogut, Anatolia"
+},
+{
+    year: "1347 CE",
+    title: "Black Death Reaches Europe",
+    description: "The plague reached Mediterranean ports and spread across Europe, causing enormous population losses and transforming economic and social structures.",
+    era: "medieval",
+    location: [43.2965, 5.3698],
+    place: "Marseille, France"
+},
+{
+    year: "1453 CE",
+    title: "Fall of Constantinople",
+    description: "Ottoman forces under Sultan Mehmed II captured Constantinople, ending the Byzantine Empire and transforming the political landscape of southeastern Europe and the eastern Mediterranean.",
+    era: "medieval",
+    location: [41.0082, 28.9784],
+    place: "Constantinople, present-day Istanbul"
+},
+{
+    year: "c. 1455 CE",
+    title: "Gutenberg Bible Printed",
+    description: "Johannes Gutenberg's printing press helped produce the Gutenberg Bible, an important milestone in the development of printing and the spread of knowledge in Europe.",
+    era: "medieval",
+    location: [49.9929, 8.2473],
+    place: "Mainz, Germany"
 }
     
 ];
@@ -441,7 +641,8 @@ civilizations.forEach(civilization => {
 const map = L.map("map").setView([25, 30], 2);
 
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    maxZoom: 19
 }).addTo(map);
 
 events.forEach(event => {
